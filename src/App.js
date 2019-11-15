@@ -44,6 +44,16 @@ class App extends Component {
     this.setState({ todos: newTodoList })
   };
 
+  handleClearCompleted = () => {
+    const newTodoList = this.state.todos.filter(todo => {
+      if (todo.completed === true) {
+        return false;
+      }
+      return true;
+    });
+    this.setState({ todos: newTodoList })
+  };
+
   render() {
     return (
       <section className="todoapp">
@@ -63,7 +73,7 @@ class App extends Component {
           <span className="todo-count">
             <strong>0</strong> item(s) left
           </span>
-          <button className="clear-completed" onClick={event => this.props.handleDelete(event, this.props.todoId)}>Clear completed</button>
+          <button onClick={this.handleClearCompleted} className="clear-completed">Clear completed</button>
         </footer>
       </section>
     );
