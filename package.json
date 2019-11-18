@@ -1,5 +1,6 @@
 {
   "name": "todos",
+  "homepage": "https://tudy4300.gitlab.io/assessment---todo-app-part-1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
